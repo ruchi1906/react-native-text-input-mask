@@ -4,13 +4,17 @@ import {
   TextInput,
   findNodeHandle,
   NativeModules,
-  Platform
+  Platform,
+  Text
 } from 'react-native'
 
 const mask = NativeModules.RNTextInputMask.mask
 const unmask = NativeModules.RNTextInputMask.unmask
 const setMask = NativeModules.RNTextInputMask.setMask
 export { mask, unmask, setMask }
+
+TextInput.defaultProps = Text.defaultProps || {};
+TextInput.defaultProps.allowFontScaling = false;
 
 export default class TextInputMask extends Component {
   static defaultProps = {
