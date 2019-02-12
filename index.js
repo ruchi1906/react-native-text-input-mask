@@ -53,6 +53,7 @@ export default class TextInputMask extends Component {
   render() {
     return (<TextInput
       {...this.props}
+      allowFontScaling={false}
       value={undefined}
       ref={ref => {
         this.input = ref
